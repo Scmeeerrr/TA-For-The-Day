@@ -15,12 +15,11 @@ let searchButn = document.getElementById("search_butn")
 let titleContainer = document.getElementById("pokemon_title")
 let picContainer = document.getElementById("pokemon_pic")
 
-
-searchButn.onclick = searchPokemon()
+searchButn.onclick = searchPokemon
 
 function searchPokemon(event) {
     event.preventDefault()
-    let url = `https://pokeapi.co/api/v2/pokemon/${searchBar}`
+    let url = `https://pokeapi.co/api/v2/pokemon/${searchBar.value.toLowerCase()}`
     fetch(url)
         .then(function (response) {
             return response.json()
@@ -28,9 +27,9 @@ function searchPokemon(event) {
         .then(function (data) {
             picContainer.innerHTML = ""
             let img = document.createElement("image")
-            img.src = data.picture
+            img.src = data.
             picContainer.appendChild(img)
-            titleContainer.innerHTML = data.name + "#" + data.number
+            titleContainer.innerHTML = data.name.toUpperCase() + " #" + data.id
         })
 
     }

@@ -5,6 +5,11 @@
  * function. How should they proceed?
  */
 
+/* SOLUTION: Since the program kept calling paragraphs.innerHTML undefined, I decided to make a for loop.
+Therefore, each element of the array pararagraphs would become lower case or upper case whenever
+the user clicked on the button. 
+*/
+
  let caseButton  = document.getElementById("case-button")
  let divs = document.getElementsByClassName("pic-divs")
  let paragraphs = document.querySelectorAll("p")
@@ -12,12 +17,15 @@
  
  caseButton.onclick = function(){
      if(isUpperCase){
-         paragraphs.innerHTML = paragraphs.innerHTML.toLowerCase()
-         isUpperCase = false
+        for (i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = paragraphs[i].innerHTML.toLowerCase(); 
+        }
+        isUpperCase = false
      }
      else{
-         paragraphs.innerHTML = paragraphs.innerHTML.toUpperCase()
-         isUpperCase = true
+        for (i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].innerHTML = paragraphs[i].innerHTML.toUpperCase(); 
+        }
+        isUpperCase = true
      }
  }
-

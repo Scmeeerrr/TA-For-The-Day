@@ -5,6 +5,7 @@
  * this?
  */
 
+// SOLUTION: On line 17, green was written without "", making the program seem it was a variable.
 
 
 let div1 = document.querySelector("#div1")
@@ -13,7 +14,7 @@ let div2 = document.querySelector("#div2")
 div2.style.backgroundColor = "red"
 
 div1.onclick = function() {
-    if(div1.style.backgroundColor == green){
+    if(div1.style.backgroundColor == "green"){
         div1.style.backgroundColor = "red"
     }
     else{
